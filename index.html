@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe | Rahul Kr.</title>
+  <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/128/1021/1021366.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Winner Message Box -->
+  <div class="winner-container flex" id="winner-box">
+    <div id="close-winner-container" class="flex" onclick="winnerBoxToggle()"> X </div>
+    <div id="winner-msg" class="flex"></div>
+    <button class="btn" onclick="restartGame()">Play Again</button>
+  </div>
+
+
+  <!-- Game Board -->
+  <div class="container flex">
+    <h1>Tic Tac Toe</h1>
+    <div class="board">
+      <button class="box flex"></button>
+      <button class="box flex"></button>
+      <button class="box flex"></button>
+      <button class="box flex"></button>
+      <button class="box flex"></button>
+      <button class="box flex"></button>
+      <button class="box flex"></button>
+      <button class="box flex"></button>
+      <button class="box flex"></button>
+    </div>
+    <button class="btn" onclick="resetGame()">Reset Game</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

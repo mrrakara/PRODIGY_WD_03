@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Chango&family=Moirai+One&display=swap");
+/* 
+     font-family: "Moirai One", system-ui; 
+    font-family: "Chango", sans-serif;
+  */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  color: white;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at center, #4e0329, #1a000b);
+}
+
+/* Winner Message */
+.winner-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.329);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+#close-winner-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 50px;
+  width: 50px;
+  background-color: #c20000;
+  color: white;
+  font-size: 30px;
+  font-family: "Chango", sans-serif;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#close-winner-container:hover {
+  color: #c20000;
+  background-color: white;
+}
+#winner-msg {
+  height: fit-content;
+  width: 90%;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 50px;
+  color: yellow;
+  text-shadow: 1px 1px 2px black;
+  padding: 10px;
+  font-family: "Chango", sans-serif;
+}
+
+.btn {
+  padding: 12px 24px;
+  background: linear-gradient(to right, #4e00a2, #003a9e);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-family: "Chango", sans-serif;
+}
+
+.btn:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 450px) {
+  #winner-msg {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  #winner-msg {
+    font-size: 20px;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 12px;
+    border-radius: 50px;
+  }
+  #close-winner-container {
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 185px) {
+  #winner-msg {
+    font-size: 10px;
+  }
+  .btn {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 100px) {
+  #winner-msg {
+    word-wrap: break-word;
+    font-size: 8px;
+  }
+  .btn {
+    padding: 5px 3px;
+    font-size: 6px;
+  }
+  #close-winner-container {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    font-size: 5px;
+  }
+}
+
+/* Game Board */
+.container {
+  height: 100%;
+  width: 100%;
+  gap: 20px;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.container > h1 {
+  font-family: "Moirai One", system-ui;
+  font-size: 50px;
+  color: rgb(209, 209, 0);
+  text-shadow: 3px 3px 1px rgba(255, 255, 255, 0.15);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+}
+
+.box {
+  border-radius: 12px;
+  font-size: 75px;
+  font-weight: bold;
+  color: red;
+  background-color: rgba(255, 255, 255, 0.89);
+  font-family: "Moirai One", system-ui;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    2px 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  z-index: 2;
+}
+
+.box:hover {
+  scale: 1.02;
+}
+
+@media screen and (max-width: 350px) {
+  .container > h1 {
+    font-size: 40px;
+  }
+  .board {
+    grid-template-columns: repeat(3, 70px);
+    grid-template-rows: repeat(3, 70px);
+  }
+  .box {
+    font-size: 50px;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  .container > h1 {
+    font-size: 20px;
+  }
+  .board {
+    grid-template-columns: repeat(3, 50px);
+    grid-template-rows: repeat(3, 50px);
+    gap:5px;
+  }
+  .box {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 170px) {
+  .container > h1 {
+    font-size: 15px;
+  }
+  .board {
+    grid-template-columns: repeat(3, 25px);
+    grid-template-rows: repeat(3, 25px);
+  }
+  .box {
+    font-size: 20px;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 95px) {
+  .container > h1 {
+    font-size: 8px;
+  }
+  .board {
+    grid-template-columns: repeat(3, 15px);
+    grid-template-rows: repeat(3, 15px);
+    gap:2px;
+  }
+  .box {
+    font-size: 10px;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 51px) {
+body{
+  display: none;
+}
+}
